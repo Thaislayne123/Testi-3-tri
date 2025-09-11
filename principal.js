@@ -2,18 +2,20 @@
 var subtitulo = document.querySelector("subtitulo")
 var titulo = document.querySelector("titulo");
 titulo.textContent = "Dicas Nutrição";
-pacientes.textContent = "Meus Pacientes";
+subtitulo.textContent = "Meus Pacientes";
 
 //acessar a tag tr - paciente Paulo
-var paciente = document.querySelector(".paciente");
+var pacientes = document.querySelectorAll(".paciente");
 
-for(var i = 0; i < paciente.leagth; i++){
+for(var i = 0; i < pacientes.leagth; i++){
+ var paciente = pacientes[i];
+
     //seleciona o conteúdo da tag
 var tdPeso = paciente.querySelector(".info-peso");
 var peso = tdPeso.textContent;
 
 //seleciona o conteúdo altuta tag
-var tdAltura = paciente.querySelector(".info-altura") 
+var tdAltura = paciente.querySelector(".info-altura"); 
 var altura = tdAltura.textContent;
  
 //calcula imc
@@ -30,13 +32,11 @@ if(pesoValido && alturaValida){
  }
 //define limetes do peso e altura
 if(peso <= 0 || peso >= 1000){
-    console.log("Peso inválido");
-    var pesoValido = false;
+   var pesoValido = false;
     tdImc.textContent = "Peso Inválido";
 }
-if(altura < 0 || altura > 3.000){
-    alert("Altura inválido");
-    var alturaValida = false;
+if(altura <= 0 || altura >= 3.00){
+       var alturaValida = false;
     tdImc.textContent = ("Altura Inválida");
 }
 }
