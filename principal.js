@@ -51,8 +51,34 @@ function mostraMensagem(){
     alert("Este elemento foi clicado");
 }
 
+//Acessa o botão
+var botaoAdicionar = document.querySelector("#adicionar-paciente");
+//Executa os códigos ao clicar no botão
+botaoAdicionar.addEventListener('click', function(event){
+    event.preventDefault();
 
+    //acessa o formulário
+var formulario = document.querySelector ("#form-adiciona");
 
+//Captura os valores digitados
+var nome = formulario.nome.value;
+var peso = formulario.peso.value;
+var altura = formulario.altura.value;
+var gordura = formulario.gordura.value;
 
+//Cria a tag , <tr>
+var pacienteTr = document.createElement("tr");
+//Cria as tag , <td>
+var nomeTd = document.createElement("td");
+var pesoTd = document.createElement("td");
+var alturaTd = document.createElement("td");
+var gorduraTd = document.createElement("td");
+var imcTd = document.createElement("td");
 
+nomeTd.textContent = nome;
+pesoTd.textContent = peso;
+alturaTd.textContent = altura;
+gorduraTd.textContent = gordura;
+imcTd.textContent = imc;
+});
 
